@@ -113,3 +113,6 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
+
+# Changing the Django AUTH_USER_MODEL setting 
+AUTH_USER_MODEL = 'authentication.Account'
