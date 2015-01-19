@@ -28,4 +28,8 @@ def update(self, instance, validated_data):
     if password and confirm_password and password == confirm_password:
         instance.set_password(password)
         instance.save()
+
+    update_session_auth_hash(self.context.get('request'), instance)
+
+    return instance
             
