@@ -1,4 +1,6 @@
 from django.db import models
+from authentication.models import Account
+
 
 class Post(models.Model):
     author = models.ForeignKey(Account)
