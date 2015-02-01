@@ -11,7 +11,7 @@
 
   NewPostController.$inject = ['$rootScope', '$scope', 'Authentication', 'Snackbar', 'Posts'];
 
-  function NewPostController($rootScope, scope, Authentication, Snackbar, Posts) {
+  function NewPostController($rootScope, $scope, Authentication, Snackbar, Posts) {
     var vm = this;
 
     vm.submit = submit;
@@ -31,7 +31,7 @@
 
       $scope.closeThisDialog();
 
-      Posts.creat(vm.content).then(createPostSuccessFn, createPostErrorFn);
+      Posts.create(vm.content).then(createPostSuccessFn, createPostErrorFn);
 
       /**
       * @name createPostSuccessFn

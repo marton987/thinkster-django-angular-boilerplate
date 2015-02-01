@@ -135,7 +135,7 @@
      * @memberOf thinkster.authentication.services.Authentication
      */
     function getAuthenticatedAccount() {
-      if (!$cookies/authenticatedAccount) {
+      if (!$cookies.authenticatedAccount) {
         return;
       }
 

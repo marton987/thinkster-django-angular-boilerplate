@@ -14,14 +14,14 @@ class PostViewSet(viewsets.ModelViewSet):
             return (permissions.AllowAny(),)
         return (permissions.IsAuthenticated(), IsAuthorOfPost(),)
 
-def perform_create(self, serializer):
-    instance = serializer.save(author=self.request.user)
+    def perform_create(self, serializer):
+        instance = serializer.save(author=self.request.user)
 
-    return super(PostViewSet, self).perform_create(serializer)
+        return super(PostViewSet, self).perform_create(serializer)
 
 
 class AccountPostsViewSet(viewsets.ViewSet):
-    queryset = Post.objects.select_related('author').all()
+    queryset = Post.objects.select_related('author').order_by('-created_at')
     serializer_class = PostSerializer
 
     def list(self, request, account_username=None):
