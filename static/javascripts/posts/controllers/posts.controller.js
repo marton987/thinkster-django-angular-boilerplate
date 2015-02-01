@@ -21,6 +21,7 @@
 
     activate();
 
+
     /**
     * @name activate
     * @desc Actions to be performed when this controller is instantiated
@@ -30,6 +31,7 @@
       $scope.$watchCollection(function () { return $scope.posts; }, render);
       $scope.$watch(function () { return $(window).width(); }, render);
     }
+
 
     /**
     * @name calculateNumberOfColumns
@@ -48,8 +50,9 @@
         return 2;
       } else {
         return 1;
-      };
+      }
     }
+
 
     /**
     * @name approximateShortestColumn
@@ -62,6 +65,7 @@
 
       return scores.indexOf(Math.min.apply(this, scores));
 
+
       /**
       * @name columnMapFn
       * @desc A map function for scoring column heights
@@ -72,8 +76,9 @@
           return element.content.length;
         });
 
-        return lengths.reduce(sum, 0) * column,length;
+        return lengths.reduce(sum, 0) * column.length;
       }
+
 
       /**
       * @name sum
@@ -86,6 +91,7 @@
         return m + n;
       }
     }
+
 
     /**
     * @name render
