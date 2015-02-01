@@ -7,7 +7,7 @@
 
   angular
     .module('thinkster.posts.directives')
-    .directives('posts', posts);
+    .directive('posts', posts);
 
   /**
   * @namespace Posts
@@ -19,7 +19,7 @@
     * @memberOf thinkster.posts.directives.Posts
     */
     var directive = {
-      controller: 'PostController',
+      controller: 'PostsController',
       controllerAs: 'vm',
       restrict: 'E',
       scope: {
